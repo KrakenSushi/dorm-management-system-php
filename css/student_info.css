@@ -13,11 +13,13 @@ h2{
     float: left;
     margin-left: 3%;
     position: fixed;
+    margin-top: 5%;
 }
 .container-right{
     width: 63%;
     float: right;
     margin-right: 3%;
+    margin-top: 5%;
 }
 .account{
     float: right;

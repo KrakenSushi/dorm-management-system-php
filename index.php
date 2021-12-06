@@ -8,19 +8,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/misc.css">
     <link rel="stylesheet" href="css/index.css">
-    
-    <title>Home</title>
+    <title>Student Log</title>
 </head>
 <body>
-        <!--Accounts-->
-    </div>
-    <!--Window-->
-    <div class="">     
-        <!--Page Title-->        
-        <a href="../pages/admin_dash.php"><img src="logo.png" alt="logo" srcset=""></a>
+    <div class="header"> 
+    <a href="index.php"><img src="logo.png" alt="logo" srcset=""></a>
         <h2 id="">Ocean Knowledge Dormitory | Student Log</h2>
         
         <!--Search-->  
@@ -34,7 +30,12 @@
         <!--Account-->
         <div class="account">
            <a href="pages/login.php"><b>Dorm Manager Login</b></a>
-        </div>     
+        </div> 
+    </div>
+    <!--Window-->
+    <div class="">     
+        <!--Page Title-->        
+            
         <div class="container-left">
             <!--Textboxes-->
             <form method="post" action="mysql/php_code_std.php" >
@@ -62,7 +63,7 @@
                 <?php $sql = "SELECT * FROM student_log";
                 if( isset($_POST['search']) ){
                     $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
-                    $sql = "SELECT * FROM student_log WHERE student_name LIKE '%$query%' OR student_id LIKE '%$query%'";
+                    $sql = "SELECT * FROM student_log WHERE student_name LIKE '%$query%' OR student_id LIKE '%$query%' OR log_type='$query' OR date_time LIKE '$query'";
                 }
                 $result = $con->query($sql);
             ?>

@@ -10,12 +10,14 @@ h2{
     width: 30%;
     float: left;
     margin-left: 3%;
+    margin-top: 5%;
     position: fixed;
 }
 .container-right{
     width: 63%;
     float: right;
     margin-right: 3%;
+    margin-top: 5%;
 }
 .account{
     float: right;
