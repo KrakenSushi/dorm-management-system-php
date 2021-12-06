@@ -1,0 +1,22 @@
+body{
+    margin-top: 1%;
+}
+.container{
+    margin-top: 1%;
+    background-color: #fff;
+    padding: 3% 3%;
+}
+.account{
+    float: right;
+    margin-top: 2%;
+}
+h2{
+    display: inline-block;
+}
+#searchBox{
+    width: 30%;    
+    display: inline-block;
+}
+img{
+    max-width: 100px;
+}

@@ -1,0 +1,31 @@
+
+h2{
+    display: inline-block;
+}
+#searchBox{
+    width: 30%;    
+    display: inline-block;
+}
+.container-left{
+    width: 30%;
+    float: left;
+    margin-left: 3%;
+    position: fixed;
+}
+.container-right{
+    width: 63%;
+    float: right;
+    margin-right: 3%;
+}
+.account{
+    float: right;
+    margin-right: 3%;
+}
+.search-container{
+    margin-right: 15%;
+    display: inline-block;
+}
+img{
+    max-width: 100px;
+    margin-left: 2%;
+}
