@@ -36,7 +36,7 @@ session_start();
             echo '</script>';
             header("Refresh:0");
         }
-        }else{
+        }else{}
 ?>
     <!--Window-->
     <div class="container">
@@ -50,9 +50,16 @@ session_start();
 
                 <input type =  "submit" class="btn btn-primary" id = "btn" value = "Login" />  
         </form>
-            <p id="regStub">Don't have an account yet? Click <a href="register.php" id="here">here</a> to register.</p>  
+
+        <?php         
+            $query = "SELECT username FROM `users`";
+            $result = mysqli_query($con, $query);
+
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+            if(!isset($row['username'])) {
+                echo "<p>Don't have an account yet? Click <a href=register.php>here</a> to register.</p>";
+        } ?>
     </div>
-    <!--Dock-->
-<?php } ?>
 </body>
 </html>
