@@ -19,7 +19,11 @@ require("mysqli.php");
         $log_type= $_POST['log_type'];        
         $dnt_now = date_create()->format('Y-m-d H:i:s');
 
-		mysqli_query($con, "INSERT INTO student_log (student_name, student_id, log_type, date_time) VALUES ('$std_name', '$std_id','$log_type', '$dnt_now')"); 
+		mysqli_query($con, "INSERT INTO student_log (student_name, student_id, log_type, date_time) VALUES ('$std_name', '$std_id','$log_type', '$dnt_now')");
+        
+        session_start();
+        $_SESSION['success_message'] = "Record saved successfully.";
+
 		header('location: ../index.php');
 	}
     /* Update a record */

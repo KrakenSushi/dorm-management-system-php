@@ -102,13 +102,39 @@
                         
                 <!--Action Button-->
                     <?php if ($update == true): ?>
-                            <button class="btn btn-success" type="submit" name="update" style="">Update</button>
+                            <button class="btn btn-success" type="submit" name="update_manage" style="">Update</button>
                             <a href="../pages/manage_log.php"> Cancel</a>
-                        <?php else: ?>
-                            <button class="btn btn-primary" type="submit" name="save" >Save</button>
+                            <!--Status Indicator-->   
+                            <?php
+                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                                <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                                <?php
+                                unset($_SESSION['success_message']);
+                                header( "refresh:3;url=../pages/manage_log.php" );
+                            }
+                            ?> 
+                    <?php else: ?>
+                            <button class="btn btn-primary" type="submit" name="save_manage" >Save</button><br>
+                            <!--Status Indicator-->   
+                            <?php 
+                                    if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                                    <?php
+                                    unset($_SESSION['success_message']);
+                                    header( "refresh:3;url=../pages/manage_log.php" );
+                            }
+                            ?> 
                         <?php endif ?>
-                
             </form>
+             <!--Delete Indicator-->   
+             <?php 
+                if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
+                    <br><div class="alert alert-danger" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
+                <?php
+                unset($_SESSION['delete_message']);
+                header( "refresh:3;url=../pages/manage_log.php" );
+            }
+            ?> 
        </div>
         <!--Database Table-->        
         <div class="container-right">
@@ -141,7 +167,7 @@
                     <td><?php echo $row['date_time']?></td>
                     <td>
                         <a href="../pages/manage_log.php?edit=<?php echo $row['log_id']; ?>" class="btn btn-primary" >Edit</a>
-                        <a href="../mysql/php_code_mgr.php?del=<?php echo $row['log_id']; ?>" class="btn btn-danger">Delete</a>
+                        <a href="../mysql/php_code_mgr.php?del_manage=<?php echo $row['log_id']; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php } ?>

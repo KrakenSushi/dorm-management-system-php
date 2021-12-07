@@ -123,9 +123,9 @@
                 <!--Permanent Address-->
                 <label for="perm_addr">Permanent Address</label>
                     <?php if ($update == true): ?>
-                        <input type="text" class=form-control id="" name="perm_addr" value="<?php echo $perm_addr;?>" min="0"><br>
+                        <input type="text" class=form-control id="" name="perm_addr" value="<?php echo $perm_addr;?>"><br>
                     <?php else: ?>
-                        <input type="text" class=form-control id="" name="perm_addr" placeholder="Enter Permanent Adddress..." min="0" required><br>
+                        <input type="text" class=form-control id="" name="perm_addr" placeholder="Enter Permanent Adddress..." required><br>
                     <?php endif ?>
 
                 <!--Assigned Dorm-->
@@ -139,12 +139,39 @@
                 <!--Action Button-->
                     <?php if ($update == true): ?>
                             <button class="btn btn-success" type="submit" name="update" style="">Update</button>
-                            <a href="../pages/student_info.php"> Cancel</a>
+                            <a href="../pages/student_info.php"> Cancel</a><br>
+                            <!--Status Indicator-->   
+                            <?php 
+                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                                    <?php
+                                    unset($_SESSION['success_message']);
+                                    header( "refresh:2; url=../pages/student_info.php" );
+                                }
+                            ?>
                         <?php else: ?>
-                            <button class="btn btn-primary" type="submit" name="save" >Save</button>
+                            <button class="btn btn-primary" type="submit" name="save" >Save</button><br>
+                            <!--Status Indicator-->   
+                            <?php
+                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                                    <?php
+                                    unset($_SESSION['success_message']);
+                                    header( "refresh:2; url=../pages/student_info.php" );
+                                }
+                            ?>
                         <?php endif ?>
                 
             </form>
+             <!--Delete Indicator-->   
+             <?php 
+                if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
+                    <br><div class="alert alert-danger" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
+                <?php
+                unset($_SESSION['delete_message']);
+                header( "refresh:2;url=../pages/student_info.php" );
+            }
+            ?> 
         </div>
         <!--Database Table-->        
         <div class="container-right" id="st_table">
@@ -183,7 +210,7 @@
                     <td><?php echo $row['assigned_dorm']?></td>
                     <td>
                         <a href="../pages/student_info.php?edit=<?php echo $row['occupant_id']; ?>" class="btn btn-primary" >Edit</a>
-                        <a href="../mysql/php_code_mgr.php?del=<?php echo $row['occupant_id']; ?>" class="btn btn-danger">Delete</a>
+                        <a href="../mysql/php_code_mgr.php?del_info=<?php echo $row['occupant_id']; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php } ?>

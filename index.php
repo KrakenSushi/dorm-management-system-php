@@ -55,7 +55,16 @@
                             <option value="Out">Out</option>
                         </select><br>                        
                 
-                <button type="submit" class="btn btn-primary" name="save">Save</button>             
+                <button type="submit" class="btn btn-primary" name="save">Save</button><br>
+                <!--Status Indicator-->   
+                <?php session_start();
+                        if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                        <?php
+                        unset($_SESSION['success_message']);
+                        header( "refresh:3;url=index.php" );
+                    }
+                    ?>          
             </form>  
         </div>
         <div class="container-right">
