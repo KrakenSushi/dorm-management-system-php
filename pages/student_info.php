@@ -93,7 +93,7 @@
                  <!--Year Section Field-->                        
                  <label for="yr_sc">Year & Section</label>
                     <?php if ($update == true): ?>
-                        <input type="text" class=form-control id="" name="yr_sc" value="<?php echo $sy;?>" min="0"><br>
+                        <input type="text" class=form-control id="" name="yr_sc" value="<?php echo $year_section;?>" min="0"><br>
                     <?php else: ?>
                         <input type="text" class=form-control id="" name="yr_sc" placeholder="Enter Year & Section..." min="0" required><br>
                     <?php endif ?>
@@ -102,7 +102,7 @@
                 <label for="gender">Gender:</label>
                     <select name="gender" id="gender" class="form-select">
                     <?php if ($update == true): ?>
-                            <option value="<?php echo $log_type;?>" disabled selected hidden><?php echo $gender;?></option>
+                            <option value="<?php echo $gender;?>" selected hidden><?php echo $gender;?></option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                     <?php else: ?>
@@ -146,7 +146,7 @@
                                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                                     <?php
                                     unset($_SESSION['success_message']);
-                                    header( "refresh:2; url=../pages/student_info.php" );
+                                    header("refresh: 2; url=../pages/student_info.php");
                                 }
                             ?>
                         <?php else: ?>
@@ -157,7 +157,7 @@
                                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                                     <?php
                                     unset($_SESSION['success_message']);
-                                    header( "refresh:2; url=../pages/student_info.php" );
+                                    header( "refresh:2;url=../pages/student_info.php" );
                                 }
                             ?>
                         <?php endif ?>
