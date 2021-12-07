@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 06, 2021 at 01:57 PM
+-- Host: 127.0.0.1
+-- Generation Time: Dec 07, 2021 at 08:54 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -24,6 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_info`
+--
+
+CREATE TABLE `student_info` (
+  `occupant_id` int(11) NOT NULL,
+  `student_name` varchar(100) NOT NULL,
+  `student_id` varchar(50) NOT NULL,
+  `year_section` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `school_year` varchar(50) NOT NULL,
+  `perm_addr` varchar(200) NOT NULL,
+  `assigned_dorm` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student_log`
 --
 
@@ -32,15 +49,8 @@ CREATE TABLE `student_log` (
   `student_name` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `student_id` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `log_type` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `date_time` datetime NOT NULL
+  `date_time` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-
---
--- Dumping data for table `student_log`
---
-
-INSERT INTO `student_log` (`log_id`, `student_name`, `student_id`, `log_type`, `date_time`) VALUES
-(1, 'Miko', '19-1324', 'In', '2021-12-06 13:07:05');
 
 -- --------------------------------------------------------
 
@@ -56,15 +66,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`usr_id`, `username`, `password`, `email`) VALUES
-(1, 'kk', 'kk', 'kk@kk.kk');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `student_info`
+--
+ALTER TABLE `student_info`
+  ADD PRIMARY KEY (`occupant_id`);
 
 --
 -- Indexes for table `student_log`
@@ -83,16 +92,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `student_info`
+--
+ALTER TABLE `student_info`
+  MODIFY `occupant_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

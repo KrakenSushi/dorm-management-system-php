@@ -31,24 +31,24 @@
             ?>
         </div>
         <a href="../pages/manage_log.php">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Manage Students</div>
-                <div class="card-body">
-                    <h5 class="card-title">Student Log</h5>
-                    <p class="card-text">Manage the student log.</p>
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-left">
+                    <div class="card-header">Manage Students</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Student Log</h5>
+                        <p class="card-text">Manage the student log.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <a href="../pages/student_info.php">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Student Info</div>
-                <div class="card-body">
-                    <h5 class="card-title">Student Info</h5>
-                    <p class="card-text">Manage the student info.</p>
+            <a href="../pages/student_info.php">
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-right">
+                    <div class="card-header">Student Info</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Student Info</h5>
+                        <p class="card-text">Manage the student info.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
     </div>
 </body>
 </html>
