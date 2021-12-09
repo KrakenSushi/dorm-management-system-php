@@ -7,6 +7,7 @@
     <link rel="icon" href="../logo.png">
     <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/misc.css">
     <title>Login</title>
 </head>
 <body>
@@ -40,7 +41,8 @@ session_start();
 ?>
     <!--Window-->
     <div class="container">
-        <h3>Ocean Knowledge Dormitory | Log In</h3>
+        <a href="../index.php"><img src="../logo.png" alt="logo" srcset=""></a>
+        <h2>Ocean Knowledge Dormitory | Log In</h2>
         <!--Log In Form-->
         <form action = "" method = "POST">  
             <label for="user"> Username: </label>  

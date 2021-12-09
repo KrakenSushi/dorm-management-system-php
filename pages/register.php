@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../logo.png">
     <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/misc.css">
     <title>Register</title>
 </head>
 <body>
@@ -36,6 +37,7 @@
         {
         ?>
     <div class="container">
+        <a href="../index.php"><img src="../logo.png" alt="logo" srcset=""></a>
         <!--Page Title-->
         <h2>Ocean Knowledge Dormitory | Register</h2>
         <div class="form">

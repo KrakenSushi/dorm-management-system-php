@@ -16,4 +16,4 @@ Database name is <i>dorm</i>
 
 <br>
 
-Logo by [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)
+Logo by: [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)
