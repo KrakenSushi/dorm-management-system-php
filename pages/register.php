@@ -34,7 +34,7 @@
     <!--Window-->
     <div class="container">
         <!--Content-->
-        <h3 id="windowTitle">INTECH2201 | Project</h3>
+        <h2>Ocean Knowledge Dormitory | Register</h2>
         <div class="form">
             <h1>Registration</h1>
             
