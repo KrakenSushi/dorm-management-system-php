@@ -13,3 +13,7 @@ Database name is <i>dorm</i>
 * For a screen resolution of 1440x900, 75% browser zoom is recomended.
 
 * For a screen resolution of 1366x768, 75% browser zoom is recomended.
+
+<br>
+
+Logo by [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)
