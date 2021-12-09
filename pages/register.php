@@ -31,12 +31,10 @@
         else
         {
         ?>
-    <!--Window-->
     <div class="container">
-        <!--Content-->
+        <!--Page Title-->
         <h2>Ocean Knowledge Dormitory | Register</h2>
         <div class="form">
-            <h1>Registration</h1>
             
                 <!--Registration Form-->
                 <form name="reg" action="" method="post">
@@ -48,7 +46,16 @@
                         <input type="password" class="form-control" name="password" placeholder="Enter Password" required /><br>
                         <input type="submit" class="btn btn-primary" name="submit" value="Register" />
                 </form>
-                <p id="regStub">Already an existing user? Click <a href="login.php" id="here">here</a>.</p>
+                <!--Check if there's already a user registered-->
+                <?php         
+                    $query = "SELECT username FROM `users`";
+                    $result = mysqli_query($con, $query);
+
+                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                    if(!isset($row['username'])) {
+                        echo '<p>Already an existing user? Click <a href="login.php" id="here">here</a>.</p>';
+                } ?>                
         </div>
     </div>
 <?php } ?>
