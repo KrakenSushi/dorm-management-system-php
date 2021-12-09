@@ -1,3 +1,7 @@
+<?php
+    //To secure registration page
+    include("../mysql/auth.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
