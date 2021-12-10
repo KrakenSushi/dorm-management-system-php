@@ -40,7 +40,7 @@
                         }
                     ?>
                 </div>
-                <!--Search-->
+                <!--Search Container-->
                 <div class="search-container">  
                     <form action="" method="POST" id="searchForm">
                         <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
@@ -49,7 +49,7 @@
                     </form>
                 </div>
     </div>
-    <!--Window-->
+    <!--Fillup Form-->
     <div class="">      
         <div class="container-left" id="st_info"> 
             <form method="post" action="../mysql/php_code_mgr.php" >
@@ -130,17 +130,34 @@
 
                 <!--Assigned Dorm-->
                 <label for="assigned_dorm">Assigned Dorm</label>
+                <select name="assigned_dorm" id="assigned_dorm" class="form-select">
                     <?php if ($update == true): ?>
-                        <input type="text" class=form-control id="" name="assigned_dorm" value="<?php echo $assigned_dorm;?>" min="0"><br>
+                            <option value="<?php echo $assigned_dorm	;?>" selected hidden><?php echo $assigned_dorm	;?></option>
+                            <option value="" disabled>--Male--</option>
+                            <option value="Zeus">Zeus</option>
+                            <option value="Poseidon">Poseidon</option>
+                            <option value="" disabled>--Female--</option>
+                            <option value="Hera">Hera</option>
+                            <option value="Aphrodite">Aphrodite</option>
+                            <option value="Athena">Athena</option>
                     <?php else: ?>
-                        <input type="text" class=form-control id="" name="assigned_dorm" placeholder="Enter Assigned Dorm..." min="0" required><br>
+                            <option value="" disabled selected hidden>Select Dorm</option>
+                            <option value="" disabled>--Male--</option>
+                            <option value="Zeus">Zeus</option>
+                            <option value="Poseidon">Poseidon</option>
+                            <option value="" disabled>--Female--</option>
+                            <option value="Hera">Hera</option>
+                            <option value="Aphrodite">Aphrodite</option>
+                            <option value="Athena">Athena</option>
                     <?php endif ?>
+                </select><br>
 
-                <!--Action Button-->
+                <!--Update/Submit Button-->
                     <?php if ($update == true): ?>
+                            <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update" style="">Update</button>
                             <a href="../pages/student_info.php"> Cancel</a><br>
-                            <!--Status Indicator-->   
+                            <!--Update Status Indicator-->   
                             <?php 
                                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
                                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
@@ -150,8 +167,9 @@
                                 }
                             ?>
                         <?php else: ?>
+                            <!--Save Button-->
                             <button class="btn btn-primary" type="submit" name="save" >Save</button><br>
-                            <!--Status Indicator-->   
+                            <!--Save Status Indicator-->   
                             <?php
                                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
                                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
@@ -173,7 +191,7 @@
             }
             ?> 
         </div>
-        <!--Database Table-->        
+        <!--Search Mechanism-->        
         <div class="container-right" id="st_table">
         <?php $sql = "SELECT * FROM student_info";
             if( isset($_POST['search']) ){
@@ -182,7 +200,8 @@
             }
             $result = $con->query($sql);
         ?>
-        <table class="table">
+        <!--Table Output-->
+        <table class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th>Occupant ID</th>

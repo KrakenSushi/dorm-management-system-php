@@ -49,8 +49,8 @@ session_start();
                 <input type = "text" class="form-control" id ="" name  = "username" placeholder="Enter Username" required/>  <br>
             <label for="pass"> Password: </label>  
                 <input type = "password" class="form-control" id ="" name  = "password" placeholder="Enter Password" required/>  <br>
-
-                <input type =  "submit" class="btn btn-primary" id = "btn" value = "Login" />  
+            <!--LogIn Button-->
+            <input type =  "submit" class="btn btn-primary" id = "btn" value = "Login" />  
         </form>
 
         <?php         

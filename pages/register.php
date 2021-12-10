@@ -40,9 +40,9 @@
         <a href="../index.php"><img src="../logo.png" alt="logo" srcset=""></a>
         <!--Page Title-->
         <h2>Ocean Knowledge Dormitory | Register</h2>
+
+        <!--Registration Form-->
         <div class="form">
-            
-                <!--Registration Form-->
                 <form name="reg" action="" method="post">
                     <label for="username">Username:</label>
                         <input type="text" class="form-control" name="username" placeholder="Enter Username" required /><br>
@@ -52,6 +52,7 @@
                         <input type="password" class="form-control" name="password" placeholder="Enter Password" required /><br>
                         <input type="submit" class="btn btn-primary" name="submit" value="Register" />
                 </form>
+                
                 <!--Check if there's already a user registered-->
                 <?php         
                     $query = "SELECT username FROM `users`";

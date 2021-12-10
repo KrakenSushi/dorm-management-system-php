@@ -26,7 +26,7 @@
         <a href="../pages/admin_dash.php"><img src="../logo.png" alt="logo" srcset=""></a>
             <h2 id="">Ocean Knowledge Dormitory | Admin Student Log</h2>
                        
-            <!--Search-->
+            <!--Search Container-->
             <div class="search-container">  
                 <form action="" method="POST" id="searchForm">
                     <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
@@ -49,7 +49,7 @@
                 ?>
             </div>   
     </div>
-    <!--Window-->
+    <!--Fillup Form-->
     <div class="">
         <div class="container-left">
             <!--Textboxes-->
@@ -65,7 +65,7 @@
                     <input type="number" class=form-control id="" name="log_id" disabled><br>
                 <?php endif ?>
 
-                <!--Name Field-->		
+                <!--Student Name Field-->		
                     <label for="std_name">Student Name:</label>
                     <?php if ($update == true): ?>
                         <?php while ($row = $record->fetch_assoc()) { ?>
@@ -75,22 +75,22 @@
                             <?php $date_time = $row['date_time']?>
                         <?php }?>
                     <?php else: ?>
-                        <input type="text" class=form-control id="" name="std_name" placeholder="Enter Product Name..." required><br>
+                        <input type="text" class=form-control id="" name="std_name" placeholder="Enter Student Name..." required><br>
                     <?php endif ?>
                 
-                <!--Quantity Field-->                        
+                <!--Student ID Field-->                        
                 <label for="qty">Student ID:</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="std_id" value="<?php echo $std_id;?>" min="0"><br>
                     <?php else: ?>
-                        <input type="text" class=form-control id="" name="std_id" placeholder="Enter Quantity..." min="0" required><br>
+                        <input type="text" class=form-control id="" name="std_id" placeholder="Enter Student ID..." min="0" required><br>
                     <?php endif ?>
 
-                <!--Manufacturer Field-->
+                <!--Log Type Field-->
                 <label for="log_type">Log Type:</label>
                     <select name="log_type" id="log_type" class="form-select">
                     <?php if ($update == true): ?>
-                            <option value="<?php echo $log_type;?>" disabled selected hidden><?php echo $log_type;?></option>
+                            <option value="<?php echo $log_type;?>" selected hidden><?php echo $log_type;?></option>
                             <option value="In">In</option>
                             <option value="Out">Out</option>
                     <?php else: ?>
@@ -100,11 +100,12 @@
                     <?php endif ?>
                     </select><br>
                         
-                <!--Action Button-->
+                <!--Update/Submit Button-->
                     <?php if ($update == true): ?>
+                        <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update_manage" style="">Update</button>
                             <a href="../pages/manage_log.php"> Cancel</a>
-                            <!--Status Indicator-->   
+                            <!--Update Status Indicator-->   
                             <?php
                                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
                                 <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
@@ -114,8 +115,9 @@
                             }
                             ?> 
                     <?php else: ?>
+                            <!--Save Button-->
                             <button class="btn btn-primary" type="submit" name="save_manage" >Save</button><br>
-                            <!--Status Indicator-->   
+                            <!--Save Status Indicator-->   
                             <?php 
                                     if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
                                         <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
@@ -145,7 +147,8 @@
             }
             $result = $con->query($sql);
         ?>
-        <table class="table">
+        <!--Table Output-->
+        <table class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th>Log ID</th>

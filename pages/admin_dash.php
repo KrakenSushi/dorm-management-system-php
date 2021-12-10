@@ -30,6 +30,7 @@
                 }
             ?>
         </div>
+        <!--Link to go to manage_log.php-->
         <a href="../pages/manage_log.php">
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-left">
                     <div class="card-header">Manage Students</div>
@@ -39,7 +40,7 @@
                     </div>
                 </div>
             </a>
-
+            <!--Link to go to student_info.php-->
             <a href="../pages/student_info.php">
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-right">
                     <div class="card-header">Student Info</div>

@@ -19,7 +19,7 @@
     <a href="index.php"><img src="logo.png" alt="logo" srcset=""></a>
         <h2 id="">Ocean Knowledge Dormitory | Student Log</h2>
         
-        <!--Search-->  
+        <!--Search Container-->  
         <div class="search-container">  
             <form action="" method="POST" id="searchForm">
                 <input type="text" placeholder="Search.." name="search" id="searchBox" class="form-control">                
@@ -49,7 +49,7 @@
                     
                 <!--Log Type Field-->
                     <label for="log_type">Log Type:</label>
-                        <select name="log_type" id="log_type" class="form-select">
+                        <select name="log_type" id="log_type" class="form-select" required>
                             <option value="N/A" disabled selected hidden>Select Type</option>
                             <option value="In">In</option>
                             <option value="Out">Out</option>
@@ -68,7 +68,7 @@
             </form>  
         </div>
         <div class="container-right">
-            <!--Database Table--> 
+            <!--Search Mechanism--> 
                 <?php $sql = "SELECT * FROM student_log";
                 if( isset($_POST['search']) ){
                     $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
@@ -76,7 +76,8 @@
                 }
                 $result = $con->query($sql);
             ?>
-            <table class="table">
+            <!--Table Output-->
+            <table class="table table-hover table-striped">
                 <thead>
                     <tr>
                         <th>Log ID</th>
