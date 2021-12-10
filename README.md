@@ -16,4 +16,11 @@ Database name is <i>dorm</i>
 
 <br>
 
+<b>Features to add</b><br>
+* QR Functionality
+* Automatically assign rooms
+* Password hash
+* Clear Fields Button
+* See number of entries and exits more simply
+
 Logo by: [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)
