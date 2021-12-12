@@ -17,7 +17,7 @@ require("mysqli.php");
 		$std_name = $_POST['std_name'];
 		$std_id = $_POST['std_id'];
         $log_type= $_POST['log_type'];        
-        $dnt_now = date_create()->format('Y-m-d H:i:s');
+        $dnt_now = date_create()->format('H:i:s A m/d/Y');
 
 		mysqli_query($con, "INSERT INTO student_log (student_name, student_id, log_type, date_time) VALUES ('$std_name', '$std_id','$log_type', '$dnt_now')");
         
@@ -47,7 +47,7 @@ require("mysqli.php");
 		$std_name = $_POST['std_name'];
 		$std_id = $_POST['std_id'];
         $log_type= $_POST['log_type'];        
-        $dnt_now = date_create()->format('Y-m-d H:i:s');
+        $dnt_now = date_create()->format('H:i:s A m/d/Y');
 
 		mysqli_query($con, "INSERT INTO student_log (student_name, student_id, log_type, date_time) VALUES ('$std_name', '$std_id','$log_type', '$dnt_now')"); 
 		header('location: ../pages/manage_log.php');

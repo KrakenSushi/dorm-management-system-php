@@ -197,7 +197,7 @@
                     <th>Student Name</th>
                     <th>Student ID</th>
                     <th>Type</th>
-                    <th>Date & Time</th>
+                    <th>Time & Date</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
