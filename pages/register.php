@@ -1,3 +1,6 @@
+<?php
+    include("../mysql/secure_register.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
