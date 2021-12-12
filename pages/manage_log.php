@@ -137,6 +137,32 @@
                 header( "refresh:3;url=../pages/manage_log.php" );
             }
             ?> 
+            <!--Student Log Count-->  
+            <?php 
+                $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
+                    $sql_in="SELECT COUNT(log_type)  AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
+                    $sql_out="SELECT COUNT(log_type)  AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
+                $result_in = $con->query($sql_in);
+                $result_out = $con->query($sql_out);
+            ?>         
+                <?php if(isset($_POST['search']))
+                {   
+                    echo '<br><h5>Log Ins:</h5>';
+                    while($row_log = $result_in->fetch_assoc())
+                    { 
+                        echo $row_log['log_in'];
+                    } 
+                } 
+                ?>        
+                <?php if(isset($_POST['search']))
+                {   
+                    echo '<br><h5>Log Outs:</h5>';
+                    while($row_log = $result_out->fetch_assoc())
+                    { 
+                        echo $row_log['log_out'];
+                    }
+                } 
+            ?>        
        </div>
         <!--Database Table-->        
         <div class="container-right">

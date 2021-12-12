@@ -26,7 +26,9 @@
                 <button type="submit" class="btn btn-primary">&#x1F50D;</button>
                 <a href="index.php"><input type="button" value="Clear" class="btn btn-danger"></a>
             </form>
-        </div>      
+        </div>
+            <!--<a href="pages/check_log.php"><input type="button" value="Check Log" class="btn btn-success"></a>-->    
+       
         <!--Account-->
         <div class="account">
            <a href="pages/login.php"><b>Dorm Manager Login</b></a>
@@ -65,7 +67,33 @@
                         header( "refresh:3;url=index.php" );
                     }
                     ?>          
-            </form>  
+            </form>
+            <!--Student Log Count-->  
+            <?php 
+                $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
+                    $sql_in="SELECT COUNT(log_type)  AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
+                    $sql_out="SELECT COUNT(log_type)  AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
+                $result_in = $con->query($sql_in);
+                $result_out = $con->query($sql_out);
+            ?>         
+                <?php if(isset($_POST['search']))
+                {   
+                    echo '<br><h5>Log Ins:</h5>';
+                    while($row_log = $result_in->fetch_assoc())
+                    { 
+                        echo $row_log['log_in'];
+                    } 
+                } 
+                ?>        
+                <?php if(isset($_POST['search']))
+                {   
+                    echo '<br><h5>Log Outs:</h5>';
+                    while($row_log = $result_out->fetch_assoc())
+                    { 
+                        echo $row_log['log_out'];
+                    }
+                } 
+            ?>        
         </div>
         <div class="container-right">
             <!--Search Mechanism--> 
