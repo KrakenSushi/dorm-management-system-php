@@ -22,7 +22,7 @@
         <!--Search Container-->  
         <div class="search-container">  
             <form action="" method="POST" id="searchForm">
-                <input type="text" placeholder="Search.." name="search" id="searchBox" class="form-control">                
+                <input type="search" placeholder="Search.." name="search" id="searchBox" class="form-control">                
                 <button type="submit" class="btn btn-primary">&#x1F50D;</button>
                 <a href="index.php"><input type="button" value="Clear" class="btn btn-danger"></a>
             </form>
@@ -57,7 +57,8 @@
                             <option value="Out">Out</option>
                         </select><br>                        
                 
-                <button type="submit" class="btn btn-primary" name="save">Save</button><br>
+                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
                 <!--Status Indicator-->   
                 <?php session_start();
                         if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
@@ -68,6 +69,8 @@
                     }
                     ?>          
             </form>
+
+                
             <!--Student Log Count-->  
             <?php 
                 $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));

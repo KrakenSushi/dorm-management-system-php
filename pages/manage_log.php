@@ -104,44 +104,28 @@
                     <?php if ($update == true): ?>
                         <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update_manage" style="">Update</button>
-                            <a href="../pages/manage_log.php"> Cancel</a>
-                            <!--Update Status Indicator-->   
-                            <?php
-                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                                <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                                <?php
-                                unset($_SESSION['success_message']);
-                                header( "refresh:3;url=../pages/manage_log.php" );
-                            }
-                            ?> 
+                            <a href="../pages/manage_log.php" class="btn btn-warning"> Cancel</a> 
                     <?php else: ?>
                             <!--Save Button-->
-                            <button class="btn btn-primary" type="submit" name="save_manage" >Save</button><br>
-                            <!--Save Status Indicator-->   
-                            <?php 
-                                    if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                                    <?php
-                                    unset($_SESSION['success_message']);
-                                    header( "refresh:3;url=../pages/manage_log.php" );
-                            }
-                            ?> 
-                        <?php endif ?>
-                        
+                            <button class="btn btn-primary" type="submit" name="save_manage" >Save</button>
+                        <?php endif ?>       
+                <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
             </form>
+
             <!--Migrate records to day to archive-->
             <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to migrate records to archive?\nIt will delete all records here and move it to another table.');">
-                <br><button class="btn btn-warning" type="submit" name="migrate_table" >Migrate to archive</button><br>
-                <!--Migrate Status Indicator-->   
-                <?php 
-                                    if (isset($_SESSION['migrate_message']) && !empty($_SESSION['migrate_message'])) { ?>
-                                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['migrate_message']; ?></div>
-                                    <?php
-                                    unset($_SESSION['migrate_message']);
-                                    header( "refresh:3;url=../pages/manage_log.php" );
-                            }
-                            ?> 
+                <br><button class="btn btn-danger" type="submit" name="migrate_table" >Migrate to archive</button> 
             </form>
+            <!--Migrate Status Indicator-->   
+            <?php 
+                if (isset($_SESSION['migrate_message']) && !empty($_SESSION['migrate_message'])) { ?>
+                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['migrate_message']; ?></div>
+                <?php
+                unset($_SESSION['migrate_message']);
+                header( "refresh:3;url=../pages/manage_log.php" );
+            }
+            ?>
+            
              <!--Delete Indicator-->   
              <?php 
                 if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
@@ -149,6 +133,25 @@
                 <?php
                 unset($_SESSION['delete_message']);
                 header( "refresh:3;url=../pages/manage_log.php" );
+            }
+            ?> 
+
+            <!--Update Status Indicator-->   
+            <?php
+                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                <?php
+                unset($_SESSION['success_message']);
+                header( "refresh:3;url=../pages/manage_log.php" );
+            }
+            ?>
+            <!--Save Status Indicator-->   
+            <?php 
+                    if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                    <?php
+                    unset($_SESSION['success_message']);
+                    header( "refresh:3;url=../pages/manage_log.php" );
             }
             ?> 
             <!--Student Log Count-->  
@@ -209,7 +212,7 @@
                     <td><?php echo $row['log_type']; ?></td>
                     <td><?php echo $row['date_time']?></td>
                     <td>
-                        <a href="../pages/manage_log.php?edit=<?php echo $row['log_id']; ?>" class="btn btn-primary" >Edit</a>
+                        <a href="../pages/manage_log.php?edit=<?php echo $row['log_id']; ?>" class="btn btn-primary" >Select</a>
                         <a href="../mysql/php_code_mgr.php?del_manage=<?php echo $row['log_id']; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

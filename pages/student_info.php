@@ -156,7 +156,7 @@
                     <?php if ($update == true): ?>
                             <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update" style="">Update</button>
-                            <a href="../pages/student_info.php"> Cancel</a><br>
+                            <a href="../pages/student_info.php" class="btn btn-warning"> Cancel</a>
                             <!--Update Status Indicator-->   
                             <?php 
                                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
@@ -168,7 +168,7 @@
                             ?>
                         <?php else: ?>
                             <!--Save Button-->
-                            <button class="btn btn-primary" type="submit" name="save" >Save</button><br>
+                            <button class="btn btn-primary" type="submit" name="save" >Save</button>
                             <!--Save Status Indicator-->   
                             <?php
                                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
@@ -178,7 +178,8 @@
                                     header( "refresh:2;url=../pages/student_info.php" );
                                 }
                             ?>
-                        <?php endif ?>
+                        <?php endif ?>       
+                <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
                 
             </form>
              <!--Delete Indicator-->   
@@ -228,7 +229,7 @@
                     <td><?php echo $row['perm_addr']?></td>
                     <td><?php echo $row['assigned_dorm']?></td>
                     <td>
-                        <a href="../pages/student_info.php?edit=<?php echo $row['occupant_id']; ?>" class="btn btn-primary" >Edit</a>
+                        <a href="../pages/student_info.php?edit=<?php echo $row['occupant_id']; ?>" class="btn btn-primary" >Select</a>
                         <a href="../mysql/php_code_mgr.php?del_info=<?php echo $row['occupant_id']; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

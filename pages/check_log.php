@@ -11,7 +11,7 @@
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../css/misc.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/check_log.css">
     <title>Student Log</title>
 </head>
 <body>
