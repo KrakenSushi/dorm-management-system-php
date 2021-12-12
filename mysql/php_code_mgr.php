@@ -1,5 +1,4 @@
 
-
 <?php 
 require("mysqli.php");
     if($con === false){
@@ -99,5 +98,21 @@ require("mysqli.php");
         header('location: ../pages/student_info.php');
     } 
     /*END*/
+?>
+<?php
+    //For emptying archive table
+    if (isset($_POST['delete_all'])) {
+        mysqli_query($con, "DELETE FROM student_log_archive");
+        
+        header('location: ../pages/log_archive.php');
+    }
+
+    if (isset($_POST['migrate_table'])){
+        //echo ('ayoko gumana');
+        mysqli_query($con, "INSERT INTO student_log_archive SELECT * FROM student_log;"); 
+        mysqli_query($con, "DELETE FROM student_log;");
+        header('location: ../pages/manage_log.php');
+    }
+
 ?>
 

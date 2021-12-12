@@ -25,3 +25,7 @@ img{
     position:fixed;
     background-color: #fff;
 }
+.del_archive{
+    display: inline-block;
+    position:fixed;                                                     
+}

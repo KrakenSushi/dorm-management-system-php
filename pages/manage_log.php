@@ -127,6 +127,11 @@
                             }
                             ?> 
                         <?php endif ?>
+                        
+            </form>
+            <!--Migrate records to day to archive-->
+            <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to migrate records to archive?');">
+                <br><button class="btn btn-warning" type="submit" name="migrate_table" >Migrate to archive</button><br>
             </form>
              <!--Delete Indicator-->   
              <?php 

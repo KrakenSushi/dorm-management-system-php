@@ -50,6 +50,16 @@
                     </div>
                 </div>
             </a>
+            <!--Link to go to log_archive.php-->
+            <a href="../pages/log_archive.php">
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-right">
+                    <div class="card-header">Student Log Archive</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Student Log Archive</h5>
+                        <p class="card-text">View the archived student logs.</p>
+                    </div>
+                </div>
+            </a>
     </div>
 </body>
 </html>

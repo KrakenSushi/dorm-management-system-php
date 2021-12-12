@@ -92,7 +92,7 @@
                     { 
                         echo $row_log['log_out'];
                     }
-                } 
+                }
             ?>        
         </div>
         <div class="container-right">
