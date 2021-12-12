@@ -27,5 +27,10 @@ img{
 }
 .del_archive{
     display: inline-block;
-    position:fixed;                                                     
+    position:fixed;
+    margin-top: 7%;
+    margin-left: 3%;                                                     
+}
+table{
+    margin-top: 3%;
 }

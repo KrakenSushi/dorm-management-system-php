@@ -52,7 +52,7 @@ session_start();
             <!--LogIn Button-->
             <input type =  "submit" class="btn btn-primary" id = "btn" value = "Login" />  
         </form>
-
+        <!--Check is there's already a user-->
         <?php         
             $query = "SELECT username FROM `users`";
             $result = mysqli_query($con, $query);

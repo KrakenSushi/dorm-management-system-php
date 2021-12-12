@@ -103,7 +103,6 @@ require("mysqli.php");
     //For emptying archive table
     if (isset($_POST['delete_all'])) {
         mysqli_query($con, "DELETE FROM student_log_archive");
-        
         header('location: ../pages/log_archive.php');
     }
 
@@ -111,6 +110,8 @@ require("mysqli.php");
         //echo ('ayoko gumana');
         mysqli_query($con, "INSERT INTO student_log_archive SELECT * FROM student_log;"); 
         mysqli_query($con, "DELETE FROM student_log;");
+        session_start();
+        $_SESSION['migrate_message'] = "Records Migrated successfully.";
         header('location: ../pages/manage_log.php');
     }
 

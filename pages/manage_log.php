@@ -130,13 +130,22 @@
                         
             </form>
             <!--Migrate records to day to archive-->
-            <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to migrate records to archive?');">
+            <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to migrate records to archive?\nIt will delete all records here and move it to another table.');">
                 <br><button class="btn btn-warning" type="submit" name="migrate_table" >Migrate to archive</button><br>
+                <!--Migrate Status Indicator-->   
+                <?php 
+                                    if (isset($_SESSION['migrate_message']) && !empty($_SESSION['migrate_message'])) { ?>
+                                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['migrate_message']; ?></div>
+                                    <?php
+                                    unset($_SESSION['migrate_message']);
+                                    header( "refresh:3;url=../pages/manage_log.php" );
+                            }
+                            ?> 
             </form>
              <!--Delete Indicator-->   
              <?php 
                 if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
-                    <br><div class="alert alert-danger" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
+                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
                 <?php
                 unset($_SESSION['delete_message']);
                 header( "refresh:3;url=../pages/manage_log.php" );

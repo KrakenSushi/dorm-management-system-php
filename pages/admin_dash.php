@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../css/misc.css">
     
-    <title>Home</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <div class="container">        
@@ -57,6 +57,16 @@
                     <div class="card-body">
                         <h5 class="card-title">Student Log Archive</h5>
                         <p class="card-text">View the archived student logs.</p>
+                    </div>
+                </div>
+            </a>
+            <!--Link to go to db_tools.php-->
+            <a href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=dorm#:~:text=New-,dorm,-New">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;" id="card-right">
+                    <div class="card-header">phpMyAdmin</div>
+                    <div class="card-body">
+                        <h5 class="card-title">phpMyAdmin</h5>
+                        <p class="card-text">Manage database in phpMyAdmin for more controls<br> WARNING!<br> Go here if you only know what you're doing!</p>
                     </div>
                 </div>
             </a>

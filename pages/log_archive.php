@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../css/misc.css">
     <link rel="stylesheet" href="../css/manage_log.css">
-    <title>Admin Student Log</title>
+    <title>Student Log Archive</title>
 </head>
 <body>
     <div class="header">
@@ -29,9 +29,6 @@
                 </form>
             </div> 
             
-            <form action="../mysql/php_code_mgr.php" method="post" class="del_archive" onsubmit="return confirm('Are you sure you want to clear the log archive? \nIt will be deleted forever!');">
-        <button type="submit" class="btn btn-danger" name="delete_all">Clear Log Archive</button>
-    </form> 
             <!--Accounts-->
             <div class="account">
                 <?php
@@ -45,6 +42,11 @@
                     }
                 ?>
             </div> 
+    </div>
+    <div class="del_archive">
+        <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to clear the log archive? \nIt will be deleted forever!');">
+            <button type="submit" class="btn btn-danger" name="delete_all">Clear Log Archive</button>
+        </form> 
     </div>
      
            
