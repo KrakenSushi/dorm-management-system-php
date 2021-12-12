@@ -2,9 +2,9 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 07, 2021 at 08:54 AM
--- Server version: 10.4.22-MariaDB
+-- Host: localhost
+-- Generation Time: Dec 12, 2021 at 04:24 PM
+-- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -55,6 +55,20 @@ CREATE TABLE `student_log` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_log_archive`
+--
+
+CREATE TABLE `student_log_archive` (
+  `log_id` int(11) NOT NULL,
+  `student_name` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `student_id` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `log_type` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `date_time` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -82,6 +96,12 @@ ALTER TABLE `student_log`
   ADD PRIMARY KEY (`log_id`);
 
 --
+-- Indexes for table `student_log_archive`
+--
+ALTER TABLE `student_log_archive`
+  ADD PRIMARY KEY (`log_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -101,6 +121,12 @@ ALTER TABLE `student_info`
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `student_log_archive`
+--
+ALTER TABLE `student_log_archive`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
