@@ -24,7 +24,7 @@
     <!--Search Container-->  
         <div class="search-container">  
             <form action="" method="POST" id="searchForm">
-                <input type="search" placeholder="Search.." name="search" id="searchBox" class="form-control">                
+                <input type="text" placeholder="Search.." name="search" id="searchBox" class="form-control">                
                 <button type="submit" class="btn btn-primary">&#x1F50D;</button>
                 <a href="index.php"><input type="button" value="Clear" class="btn btn-danger"></a>
             </form>
@@ -67,14 +67,15 @@
                             <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                             <?php
                             unset($_SESSION['success_message']);
-                            header( "refresh:3;url=index.php" );
+                            echo '<meta http-equiv="refresh" content="1; url=index.php">';
                         }
                     ?>          
             </form>
                 
         <!--Student Log Count-->  
             <?php 
-                $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
+                $searchQuery = $_POST['search'] ?? "";
+                $query = mysqli_real_escape_string($con, htmlspecialchars($searchQuery));
                     $sql_in="SELECT COUNT(log_type)  AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
                     $sql_out="SELECT COUNT(log_type)  AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
                 $result_in = $con->query($sql_in);

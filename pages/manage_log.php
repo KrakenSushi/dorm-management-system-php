@@ -122,7 +122,7 @@
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['migrate_message']; ?></div>
                 <?php
                 unset($_SESSION['migrate_message']);
-                header( "refresh:3;url=../pages/manage_log.php" );
+                echo '<meta http-equiv="refresh" content="1; url=../pages/manage_log.php">';
             }
             ?>            
         <!--Delete Indicator-->   
@@ -131,7 +131,7 @@
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
                 <?php
                 unset($_SESSION['delete_message']);
-                header( "refresh:3;url=../pages/manage_log.php" );
+                echo '<meta http-equiv="refresh" content="1; url=../pages/manage_log.php">';
             }
             ?> 
         <!--Update Status Indicator-->   
@@ -140,7 +140,7 @@
                 <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                 <?php
                 unset($_SESSION['success_message']);
-                header( "refresh:3;url=../pages/manage_log.php" );
+                echo '<meta http-equiv="refresh" content="1; url=../pages/manage_log.php">';
             }
             ?>
         <!--Save Status Indicator-->   
@@ -149,12 +149,13 @@
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                 <?php
                 unset($_SESSION['success_message']);
-                header( "refresh:3;url=../pages/manage_log.php" );
+                echo '<meta http-equiv="refresh" content="1; url=../pages/manage_log.php">';
             }
             ?> 
         <!--Student Log Count-->  
             <?php 
-                $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
+                $searchQuery = $_POST['search'] ?? "";
+                $query = mysqli_real_escape_string($con, htmlspecialchars($searchQuery));
                     $sql_in="SELECT COUNT(log_type) AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
                     $sql_out="SELECT COUNT(log_type) AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
                 $result_in = $con->query($sql_in);

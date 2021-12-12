@@ -171,7 +171,7 @@
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                     <?php
                     unset($_SESSION['success_message']);
-                    header( "refresh:2;url=../pages/student_info.php" );
+                    echo '<meta http-equiv="refresh" content="1; url=../pages/student_info.php">';
                 }
             ?>
         <!--Delete Indicator-->   
@@ -180,7 +180,7 @@
                     <br><div class="alert alert-danger" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
                 <?php
                 unset($_SESSION['delete_message']);
-                header( "refresh:2;url=../pages/student_info.php" );
+                echo '<meta http-equiv="refresh" content="1; url=../pages/student_info.php">';
                 }
             ?> 
         <!--Update Status Indicator-->   
@@ -189,7 +189,7 @@
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
                     <?php
                     unset($_SESSION['success_message']);
-                    header("refresh: 2; url=../pages/student_info.php");
+                    echo '<meta http-equiv="refresh" content="1; url=../pages/student_info.php">';
                 }
             ?>
         </div>
