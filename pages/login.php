@@ -39,20 +39,20 @@ session_start();
         }
         }else{}
 ?>
-    <!--Window-->
+<!--Window-->
     <div class="container">
         <a href="../index.php"><img src="../logo.png" alt="logo" srcset=""></a>
         <h2>Ocean Knowledge Dormitory | Log In</h2>
-        <!--Log In Form-->
+    <!--Log In Form-->
         <form action = "" method = "POST">  
             <label for="user"> Username: </label>  
                 <input type = "text" class="form-control" id ="" name  = "username" placeholder="Enter Username" required/>  <br>
             <label for="pass"> Password: </label>  
                 <input type = "password" class="form-control" id ="" name  = "password" placeholder="Enter Password" required/>  <br>
-            <!--LogIn Button-->
+        <!--LogIn Button-->
             <input type =  "submit" class="btn btn-primary" id = "btn" value = "Login" />  
         </form>
-        <!--Check is there's already a user-->
+    <!--Check is there's already a user-->
         <?php         
             $query = "SELECT username FROM `users`";
             $result = mysqli_query($con, $query);

@@ -20,7 +20,7 @@
         <a href="../pages/admin_dash.php"><img src="../logo.png" alt="logo" srcset=""></a>
             <h2 id="">Ocean Knowledge Dormitory | Student Log Archive</h2>
                        
-            <!--Search Container-->
+        <!--Search Container-->
             <div class="search-container">  
                 <form action="" method="POST" id="searchForm">
                     <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
@@ -29,7 +29,7 @@
                 </form>
             </div> 
             
-            <!--Accounts-->
+        <!--Accounts-->
             <div class="account">
                 <?php
                     $user=$_SESSION['username'];

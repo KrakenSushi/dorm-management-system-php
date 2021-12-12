@@ -16,10 +16,12 @@
 </head>
 <body>
     <div class="header"> 
-    <a href="index.php"><img src="logo.png" alt="logo" srcset=""></a>
+    <a href="index.php"><img src="logo.png" alt="logo" srcset=""></a> 
+
+    <!--Page Title--> 
         <h2 id="">Ocean Knowledge Dormitory | Student Log</h2>
         
-        <!--Search Container-->  
+    <!--Search Container-->  
         <div class="search-container">  
             <form action="" method="POST" id="searchForm">
                 <input type="search" placeholder="Search.." name="search" id="searchBox" class="form-control">                
@@ -27,19 +29,18 @@
                 <a href="index.php"><input type="button" value="Clear" class="btn btn-danger"></a>
             </form>
         </div>
-            <!--<a href="pages/check_log.php"><input type="button" value="Check Log" class="btn btn-success"></a>-->    
-       
-        <!--Account-->
+
+    <!--Account-->
         <div class="account">
            <a href="pages/login.php"><b>Dorm Manager Login</b></a>
         </div> 
     </div>
-    <!--Window-->
-    <div class="">     
-        <!--Page Title-->        
-            
+
+    <!--Container-->
+    <div class=""> 
         <div class="container-left">
-            <!--Textboxes-->
+
+        <!--Textboxes-->
             <form method="post" action="mysql/php_code_std.php" >
                 <!--Name Field-->		
                     <label for="std_name">Student Name:</label>
@@ -57,21 +58,21 @@
                             <option value="Out">Out</option>
                         </select><br>                        
                 
-                <button type="submit" class="btn btn-primary" name="save">Save</button>
-                <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
+                    <button type="submit" class="btn btn-primary" name="save">Save</button>
+                    <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
+                    <a href="#"class="btn btn-primary">Scan QR code</a>
                 <!--Status Indicator-->   
-                <?php session_start();
-                        if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                        <?php
-                        unset($_SESSION['success_message']);
-                        header( "refresh:3;url=index.php" );
-                    }
+                    <?php session_start();
+                            if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                            <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                            <?php
+                            unset($_SESSION['success_message']);
+                            header( "refresh:3;url=index.php" );
+                        }
                     ?>          
             </form>
-
                 
-            <!--Student Log Count-->  
+        <!--Student Log Count-->  
             <?php 
                 $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
                     $sql_in="SELECT COUNT(log_type)  AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
@@ -98,16 +99,17 @@
                 }
             ?>        
         </div>
+    <!--Table-->
         <div class="container-right">
             <!--Search Mechanism--> 
-                <?php $sql = "SELECT * FROM student_log";
+            <?php $sql = "SELECT * FROM student_log";
                 if( isset($_POST['search']) ){
                     $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
                     $sql = "SELECT * FROM student_log WHERE student_name LIKE '%$query%' OR student_id LIKE '%$query%' OR log_type='$query' OR date_time LIKE '$query'";
                 }
-                $result = $con->query($sql);
+            $result = $con->query($sql);
             ?>
-            <!--Table Output-->
+        <!--Table Output-->
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
@@ -119,7 +121,7 @@
                     </tr>
                 </thead>
 
-                <!--Fetching database table values-->
+            <!--Fetching database table values-->
                 <?php while($row = $result->fetch_assoc()){ ?>
                     <tr>
                         <td><?php echo $row['log_id']; ?></td>

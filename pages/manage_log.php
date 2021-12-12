@@ -26,7 +26,7 @@
         <a href="../pages/admin_dash.php"><img src="../logo.png" alt="logo" srcset=""></a>
             <h2 id="">Ocean Knowledge Dormitory | Admin Student Log</h2>
                        
-            <!--Search Container-->
+        <!--Search Container-->
             <div class="search-container">  
                 <form action="" method="POST" id="searchForm">
                     <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
@@ -35,7 +35,7 @@
                 </form>
             </div>   
 
-            <!--Accounts-->
+        <!--Accounts-->
             <div class="account">
                 <?php
                     $user=$_SESSION['username'];
@@ -49,13 +49,13 @@
                 ?>
             </div>   
     </div>
-    <!--Fillup Form-->
+<!--Fillup Form-->
     <div class="">
         <div class="container-left">
-            <!--Textboxes-->
+        <!--Textboxes-->
             <form method="post" action="../mysql/php_code_mgr.php" >
                 <input type="hidden" name="log_id" value="<?php echo $id; ?>">
-                <!--ID Display-->
+            <!--ID Display-->
                 <input type="hidden" name="log_id" value="<?php echo $id; ?>">
                 <?php if ($update == true): ?>
                     <label for="log_id">ID:</label>
@@ -78,7 +78,7 @@
                         <input type="text" class=form-control id="" name="std_name" placeholder="Enter Student Name..." required><br>
                     <?php endif ?>
                 
-                <!--Student ID Field-->                        
+            <!--Student ID Field-->                        
                 <label for="qty">Student ID:</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="std_id" value="<?php echo $std_id;?>" min="0"><br>
@@ -86,7 +86,7 @@
                         <input type="text" class=form-control id="" name="std_id" placeholder="Enter Student ID..." min="0" required><br>
                     <?php endif ?>
 
-                <!--Log Type Field-->
+            <!--Log Type Field-->
                 <label for="log_type">Log Type:</label>
                     <select name="log_type" id="log_type" class="form-select">
                     <?php if ($update == true): ?>
@@ -106,17 +106,17 @@
                             <button class="btn btn-success" type="submit" name="update_manage" style="">Update</button>
                             <a href="../pages/manage_log.php" class="btn btn-warning"> Cancel</a> 
                     <?php else: ?>
-                            <!--Save Button-->
+                        <!--Save Button-->
                             <button class="btn btn-primary" type="submit" name="save_manage" >Save</button>
                         <?php endif ?>       
                 <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
             </form>
 
-            <!--Migrate records to day to archive-->
+        <!--Migrate records to day to archive-->
             <form action="../mysql/php_code_mgr.php" method="post" onsubmit="return confirm('Are you sure you want to migrate records to archive?\nIt will delete all records here and move it to another table.');">
                 <br><button class="btn btn-danger" type="submit" name="migrate_table" >Migrate to archive</button> 
             </form>
-            <!--Migrate Status Indicator-->   
+        <!--Migrate Status Indicator-->   
             <?php 
                 if (isset($_SESSION['migrate_message']) && !empty($_SESSION['migrate_message'])) { ?>
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['migrate_message']; ?></div>
@@ -124,9 +124,8 @@
                 unset($_SESSION['migrate_message']);
                 header( "refresh:3;url=../pages/manage_log.php" );
             }
-            ?>
-            
-             <!--Delete Indicator-->   
+            ?>            
+        <!--Delete Indicator-->   
              <?php 
                 if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
                     <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
@@ -135,8 +134,7 @@
                 header( "refresh:3;url=../pages/manage_log.php" );
             }
             ?> 
-
-            <!--Update Status Indicator-->   
+        <!--Update Status Indicator-->   
             <?php
                 if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
                 <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
@@ -145,20 +143,20 @@
                 header( "refresh:3;url=../pages/manage_log.php" );
             }
             ?>
-            <!--Save Status Indicator-->   
+        <!--Save Status Indicator-->   
             <?php 
-                    if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                        <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                    <?php
-                    unset($_SESSION['success_message']);
-                    header( "refresh:3;url=../pages/manage_log.php" );
+                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                <?php
+                unset($_SESSION['success_message']);
+                header( "refresh:3;url=../pages/manage_log.php" );
             }
             ?> 
-            <!--Student Log Count-->  
+        <!--Student Log Count-->  
             <?php 
                 $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
-                    $sql_in="SELECT COUNT(log_type)  AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
-                    $sql_out="SELECT COUNT(log_type)  AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
+                    $sql_in="SELECT COUNT(log_type) AS log_in FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'In'";
+                    $sql_out="SELECT COUNT(log_type) AS log_out FROM `student_log` WHERE student_name LIKE '%$query%' AND log_type = 'Out'";
                 $result_in = $con->query($sql_in);
                 $result_out = $con->query($sql_out);
             ?>         
@@ -181,7 +179,7 @@
                 } 
             ?>        
        </div>
-        <!--Database Table-->        
+    <!--Database Table-->        
         <div class="container-right">
         <?php $sql = "SELECT * FROM student_log";
             if( isset($_POST['search']) ){
@@ -190,7 +188,7 @@
             }
             $result = $con->query($sql);
         ?>
-        <!--Table Output-->
+    <!--Table Output-->
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -203,7 +201,7 @@
                 </tr>
             </thead>
 
-            <!--Fetching database table values-->
+        <!--Fetching database table values-->
             <?php while($row = $result->fetch_assoc()){ ?>
                 <tr>
                     <td><?php echo $row['log_id']; ?></td>

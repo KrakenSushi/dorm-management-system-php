@@ -21,13 +21,12 @@
     <link rel="stylesheet" href="../css/misc.css">
     <title>Student Information</title>
 </head>
-<body>
-    
+<body>    
     <div class="header">
         <a href="../pages/admin_dash.php"><img src="../logo.png" alt="logo" srcset=""></a>
                 <h2 id="">Ocean Knowledge Dormitory | Student Information</h2>   
 
-                <!--Accounts-->
+            <!--Accounts-->
                 <div class="account">
                     <?php
                         $user=$_SESSION['username'];
@@ -40,7 +39,7 @@
                         }
                     ?>
                 </div>
-                <!--Search Container-->
+            <!--Search Container-->
                 <div class="search-container">  
                     <form action="" method="POST" id="searchForm">
                         <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
@@ -49,12 +48,12 @@
                     </form>
                 </div>
     </div>
-    <!--Fillup Form-->
+<!--Fillup Form-->
     <div class="">      
         <div class="container-left" id="st_info"> 
             <form method="post" action="../mysql/php_code_mgr.php" >
                 <input type="hidden" name="occupant_id" value="<?php echo $id; ?>">
-                <!--ID Display-->
+            <!--ID Display-->
                 <input type="hidden" name="occupant_id" value="<?php echo $id; ?>">
                 <?php if ($update == true): ?>
                     <label for="occupant_id">Occupant ID:</label>
@@ -82,7 +81,7 @@
                         <input type="text" class=form-control id="" name="std_name" placeholder="Enter Student Name..." required><br>
                     <?php endif ?>
                 
-                <!--Student ID Field-->                        
+            <!--Student ID Field-->                        
                 <label for="qty">Student ID:</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="std_id" value="<?php echo $std_id;?>" min="0"><br>
@@ -90,7 +89,7 @@
                         <input type="text" class=form-control id="" name="std_id" placeholder="Enter Student ID..." min="0" required><br>
                     <?php endif ?>
 
-                 <!--Year Section Field-->                        
+            <!--Year Section Field-->                        
                  <label for="yr_sc">Year & Section</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="yr_sc" value="<?php echo $year_section;?>" min="0"><br>
@@ -98,7 +97,7 @@
                         <input type="text" class=form-control id="" name="yr_sc" placeholder="Enter Year & Section..." min="0" required><br>
                     <?php endif ?>
 
-                <!--Gender-->
+            <!--Gender-->
                 <label for="gender">Gender:</label>
                     <select name="gender" id="gender" class="form-select">
                     <?php if ($update == true): ?>
@@ -112,7 +111,7 @@
                     <?php endif ?>
                     </select><br>
 
-                <!--School Year-->
+            <!--School Year-->
                 <label for="sch_yr">School Year</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="sch_yr" value="<?php echo $sy;?>" min="0"><br>
@@ -120,7 +119,7 @@
                         <input type="text" class=form-control id="" name="sch_yr" placeholder="Enter School Year..." min="0" required><br>
                     <?php endif ?>
 
-                <!--Permanent Address-->
+            <!--Permanent Address-->
                 <label for="perm_addr">Permanent Address</label>
                     <?php if ($update == true): ?>
                         <input type="text" class=form-control id="" name="perm_addr" value="<?php echo $perm_addr;?>"><br>
@@ -128,7 +127,7 @@
                         <input type="text" class=form-control id="" name="perm_addr" placeholder="Enter Permanent Adddress..." required><br>
                     <?php endif ?>
 
-                <!--Assigned Dorm-->
+            <!--Assigned Dorm-->
                 <label for="assigned_dorm">Assigned Dorm</label>
                 <select name="assigned_dorm" id="assigned_dorm" class="form-select">
                     <?php if ($update == true): ?>
@@ -157,42 +156,45 @@
                             <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update" style="">Update</button>
                             <a href="../pages/student_info.php" class="btn btn-warning"> Cancel</a>
-                            <!--Update Status Indicator-->   
-                            <?php 
-                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                                    <?php
-                                    unset($_SESSION['success_message']);
-                                    header("refresh: 2; url=../pages/student_info.php");
-                                }
-                            ?>
+                            <a href="#"class="btn btn-primary">Show QR code</a>
+                            
                         <?php else: ?>
                             <!--Save Button-->
                             <button class="btn btn-primary" type="submit" name="save" >Save</button>
-                            <!--Save Status Indicator-->   
-                            <?php
-                                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
-                                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
-                                    <?php
-                                    unset($_SESSION['success_message']);
-                                    header( "refresh:2;url=../pages/student_info.php" );
-                                }
-                            ?>
                         <?php endif ?>       
                 <input type=reset value="Reset Fields" name="reset" class="btn btn-info">
                 
             </form>
-             <!--Delete Indicator-->   
+        <!--Save Status Indicator-->   
+             <?php
+                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                    <?php
+                    unset($_SESSION['success_message']);
+                    header( "refresh:2;url=../pages/student_info.php" );
+                }
+            ?>
+        <!--Delete Indicator-->   
              <?php 
                 if (isset($_SESSION['delete_message']) && !empty($_SESSION['delete_message'])) { ?>
                     <br><div class="alert alert-danger" role="alert"><?php echo $_SESSION['delete_message']; ?></div>
                 <?php
                 unset($_SESSION['delete_message']);
                 header( "refresh:2;url=../pages/student_info.php" );
-            }
+                }
             ?> 
+        <!--Update Status Indicator-->   
+            <?php 
+                if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
+                    <br><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_message']; ?></div>
+                    <?php
+                    unset($_SESSION['success_message']);
+                    header("refresh: 2; url=../pages/student_info.php");
+                }
+            ?>
         </div>
-        <!--Search Mechanism-->        
+
+    <!--Search Mechanism-->        
         <div class="container-right" id="st_table">
         <?php $sql = "SELECT * FROM student_info";
             if( isset($_POST['search']) ){
@@ -201,7 +203,7 @@
             }
             $result = $con->query($sql);
         ?>
-        <!--Table Output-->
+    <!--Table Output-->
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
@@ -217,7 +219,7 @@
                 </tr>
             </thead>
 
-            <!--Fetching database table values-->
+        <!--Fetching database table values-->
             <?php while($row = $result->fetch_assoc()){ ?>
                 <tr>
                     <td><?php echo $row['occupant_id']; ?></td>

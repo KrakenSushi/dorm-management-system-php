@@ -16,8 +16,9 @@
 <body>
     <div class="container">        
         <a href="../pages/admin_dash.php"><img src="../logo.png" alt="logo" srcset=""></a>
+    <!--Page Title-->
         <h2 id="">Ocean Knowledge Dormitory | Admin Dashboard</h2>
-        <!--Accounts-->
+    <!--Accounts-->
         <div class="account">
             <?php
                 $user=$_SESSION['username'];
@@ -30,7 +31,7 @@
                 }
             ?>
         </div>
-        <!--Link to go to manage_log.php-->
+    <!--Link to go to manage_log.php-->
         <a href="../pages/manage_log.php">
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-left">
                     <div class="card-header">Manage Students</div>
@@ -40,7 +41,7 @@
                     </div>
                 </div>
             </a>
-            <!--Link to go to student_info.php-->
+        <!--Link to go to student_info.php-->
             <a href="../pages/student_info.php">
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-right">
                     <div class="card-header">Student Info</div>
@@ -50,7 +51,7 @@
                     </div>
                 </div>
             </a>
-            <!--Link to go to log_archive.php-->
+        <!--Link to go to log_archive.php-->
             <a href="../pages/log_archive.php">
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="card-right">
                     <div class="card-header">Student Log Archive</div>
@@ -60,7 +61,7 @@
                     </div>
                 </div>
             </a>
-            <!--Link to go to db_tools.php-->
+        <!--Link to go to db_tools.php-->
             <a href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=dorm#:~:text=New-,dorm,-New">
                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;" id="card-right">
                     <div class="card-header">phpMyAdmin</div>
