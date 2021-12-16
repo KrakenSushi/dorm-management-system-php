@@ -15,9 +15,9 @@ Database name is <b>dorm</b><br><br>
 * For a screen resolution of 1366x768, 75% browser zoom is recomended.
 
 <br>
-&#169; Bernardo, V.J.<br>
-&#169; Delim, J.<br>
-&#169; Ileto, W.X.<br>
-&#169; [Ladores J.](https://github.com/jstnldrs05)<br>
-&#169; Monesit E.J.<br>
-&#169; [Reyes E.J.](https://github.com/KrakenSushi)<br><br>
+&#169; Bernardo, V.J. <br>
+&#169; Delim, J. <br>
+&#169; Ileto, W.X. <br>
+&#169; [Ladores J.](https://github.com/jstnldrs05) <br>
+&#169; Monesit E.J. <br>
+&#169; [Reyes E.J.](https://github.com/KrakenSushi) <br><br>
