@@ -3,6 +3,14 @@
 
 A final project requirement for the subject, COMSCI 3100 Software Engineering
 
+Made with the the following:
+* HTML
+* CSS
+* Bootstrap
+* PHP
+* MySQL
+  
+<br>
 MySQL Port is set to 3306 in ``mysqli.php`` <br>
 Database name is <b>dorm</b><br><br>
 
@@ -18,6 +26,7 @@ Database name is <b>dorm</b><br><br>
 &#169; Bernardo, V.J. <br>
 &#169; Delim, J. <br>
 &#169; Ileto, W.X. <br>
-&#169; [Ladores J.](https://github.com/jstnldrs05) <br>
+&#169; <a href="https://github.com/jstnldrs05">Ladores J.</a><br>
 &#169; Monesit E.J. <br>
-&#169; [Reyes E.J.](https://github.com/KrakenSushi) <br><br>
+&#169; <a href="https://github.com/KrakenSushi">Reyes E.J.</a><br>
+
