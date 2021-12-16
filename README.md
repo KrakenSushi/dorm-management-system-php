@@ -12,7 +12,7 @@ Made with the the following:
   
 <br>
 XAMPP was used as database and server for this project.<br>
-MySQL Port is set to 3306 in ``mysqli.php`` <br>
+MySQL Port is set to 3306 in <b>mysqli.php</b><br>
 Database name is <b>dorm</b><br><br>
 
 <b>Optimized for 1920x1080 screen resolution</b><br>
