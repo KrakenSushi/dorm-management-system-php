@@ -156,7 +156,6 @@
                             <!--Update Button-->
                             <button class="btn btn-success" type="submit" name="update" style="">Update</button>
                             <a href="../pages/student_info.php" class="btn btn-warning"> Cancel</a>
-                            <a href="#"class="btn btn-primary">Show QR code</a>
                             
                         <?php else: ?>
                             <!--Save Button-->
