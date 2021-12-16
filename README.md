@@ -16,10 +16,4 @@ Database name is <i>dorm</i>
 
 <br>
 
-<b>Features to add</b><br>
-* QR Functionality
-* ~~Clear Fields Button~~
-* ~~Option to move logs of today to an archived log~~
-* ~~See number of entries and exits more simply~~
-
 Logo by: [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)

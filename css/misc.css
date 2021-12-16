@@ -11,8 +11,11 @@
 h2{
     display: inline-block;
 }
+.search-container{
+    width: 30%;
+}
 #searchBox{
-    width: 30%;    
+    width: 40%;    
     display: inline-block;
 }
 img{

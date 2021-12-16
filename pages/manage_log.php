@@ -29,7 +29,7 @@
         <!--Search Container-->
             <div class="search-container">  
                 <form action="" method="POST" id="searchForm">
-                    <input type="text" placeholder="Search.." name="search" class="form-control" id="searchBox">                
+                    <input type="text" placeholder="Enter Student Name" name="search" class="form-control" id="searchBox">                
                     <button type="submit" class="btn btn-primary" >&#x1F50D;</button>
                     <a href="../pages/manage_log.php"><input type="button" value="Clear" class="btn btn-danger"></a>
                 </form>
@@ -185,7 +185,7 @@
         <?php $sql = "SELECT * FROM student_log";
             if( isset($_POST['search']) ){
                 $query = mysqli_real_escape_string($con, htmlspecialchars($_POST['search']));
-                $sql = "SELECT * FROM student_log WHERE student_name LIKE '%$query%' OR student_id LIKE '%$query%'";
+                $sql = "SELECT * FROM student_log WHERE student_name LIKE '%$query%'";
             }
             $result = $con->query($sql);
         ?>
