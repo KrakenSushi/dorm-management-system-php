@@ -1,10 +1,10 @@
 # Dorm Management System
 <img src="logo.png" width=200px>
 
-A school project requirement
+A final project requirement for the subject, COMSCI 3100 Software Engineering
 
-MySQL Port is set to 3306 in mysqli.php
-Database name is <i>dorm</i>
+MySQL Port is set to 3306 in ``mysqli.php`` <br>
+Database name is <b>dorm</b><br><br>
 
 <b>Optimized for 1920x1080 screen resolution</b><br>
 
@@ -15,5 +15,9 @@ Database name is <i>dorm</i>
 * For a screen resolution of 1366x768, 75% browser zoom is recomended.
 
 <br>
-
-Logo by: [TenshiLee](https://www.facebook.com/TenshiLEEkazashimo)
+&#169; Bernardo, V.J.<br>
+&#169; Delim, J.<br>
+&#169; Ileto, W.X.<br>
+&#169; [Ladores J.](https://github.com/jstnldrs05)<br>
+&#169; Monesit E.J.<br>
+&#169; [Reyes E.J.](https://github.com/KrakenSushi)<br><br>
