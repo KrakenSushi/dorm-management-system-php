@@ -11,6 +11,7 @@ Made with the the following:
 * MySQL
   
 <br>
+XAMPP was used as database and server for this project.<br>
 MySQL Port is set to 3306 in ``mysqli.php`` <br>
 Database name is <b>dorm</b><br><br>
 
