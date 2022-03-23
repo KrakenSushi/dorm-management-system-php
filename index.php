@@ -12,6 +12,27 @@
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/misc.css">
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script>
+        let scanner = new Instascan.Scanner({ video: document.getElementById('cam')});
+           Instascan.Camera.getCameras().then(function(cameras){
+               if(cameras.length = 1 ){
+                   scanner.start(cameras[0]);
+               } else{
+                   alert('No cameras found');
+               }
+
+           }).catch(function(e) {
+               console.error(e);
+           });
+
+           scanner.addListener('scan',function(c){
+               document.getElementById('text').value=c;
+               document.forms[0].submit();
+           });
+    </script>
     <title>Student Log</title>
 </head>
 <body>
@@ -59,8 +80,8 @@
                         </select><br>                        
                 
                     <button type="submit" class="btn btn-primary" name="save">Save</button>
-                    <input type=reset value="Reset Fields" name="reset" class="btn btn-info"><br>   
-                    <button>Scan QR Code</button>
+                    <input type=reset value="Reset Fields" name="reset" class="btn btn-info"><br>
+                    <video id="cam" width="20%" ></video><br>
                 <!--Status Indicator-->   
                     <?php session_start();
                             if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
