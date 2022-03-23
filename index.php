@@ -60,6 +60,7 @@
                 
                     <button type="submit" class="btn btn-primary" name="save">Save</button>
                     <input type=reset value="Reset Fields" name="reset" class="btn btn-info"><br>   
+                    <button>Scan QR Code</button>
                 <!--Status Indicator-->   
                     <?php session_start();
                             if (isset($_SESSION['success_message']) && !empty($_SESSION['success_message'])) { ?>
